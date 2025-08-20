@@ -1,0 +1,213 @@
+{
+  "document": {
+    "title": "Introduction to AI.pdf",
+    "pages": [
+      {
+        "page_number": 1,
+        "content": {
+          "chapter_title": "CHAPTER 1",
+          "chapter_name": "The Machine Learning Landscape",
+          "introductory_text": "When most people hear \"Machine Learning,\" they picture a robot: a dependable butler or a deadly Terminator depending on who you ask. But Machine Learning is not just a futuristic fantasy, it’s already here. In fact, it has been around for decades in some specialized applications, such as *Optical Character Recognition* (OCR). But the first ML application that really became mainstream, improving the lives of hundreds of millions of people, took over the world back in the 1990s: it was the *spam filter*. Not exactly a self-aware Skynet, but it does technically qualify as Machine Learning (it has actually learned so well that you seldom need to flag an email as spam anymore). It was followed by hundreds of ML applications that now quietly power hundreds of products and features that you use regularly, from better recommendations to voice search.",
+          "chapter_objectives": [
+            "Clarify what Machine Learning is and why you may want to use it",
+            "Explore main regions and notable landmarks: supervised vs unsupervised learning, online vs batch learning, instance-based vs model-based learning",
+            "Look at the workflow of a typical ML project",
+            "Discuss main challenges",
+            "Cover how to evaluate and fine-tune a Machine Learning system"
+          ],
+          "note": "This chapter introduces fundamental concepts and jargon. It's a high-level overview without much code."
+        }
+      },
+      {
+        "page_number": 2,
+        "content": {
+          "section_title": "What Is Machine Learning?",
+          "definitions": [
+            {
+              "text": "Machine Learning is the science (and art) of programming computers so they can learn from data.",
+              "type": "general"
+            },
+            {
+              "text": "Field of study that gives computers the ability to learn without being explicitly programmed.",
+              "author": "Arthur Samuel, 1959",
+              "type": "academic"
+            },
+            {
+              "text": "A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.",
+              "author": "Tom Mitchell, 1997",
+              "type": "engineering"
+            }
+          ],
+          "spam_filter_example": {
+            "task_T": "flag spam for new emails",
+            "experience_E": "training data (spam and ham examples)",
+            "performance_measure_P": "accuracy (ratio of correctly classified emails)",
+            "training_set": "examples the system uses to learn",
+            "training_instance": "each training example"
+          },
+          "key_concept": "Simply downloading data (like Wikipedia) doesn't constitute Machine Learning without improvement on a specific task"
+        }
+      },
+      {
+        "page_number": 3,
+        "content": {
+          "section_title": "Why Use Machine Learning?",
+          "traditional_approach": {
+            "description": "How to write a spam filter using traditional programming",
+            "steps": [
+              "Look at what spam typically looks like (notice patterns)",
+              "Write detection algorithms for each pattern",
+              "Test program and repeat steps 1-2 until good enough"
+            ],
+            "limitation": "Program becomes a long list of complex rules that's hard to maintain",
+            "figure_reference": "Figure 1-1: The traditional approach"
+          },
+          "ml_approach": {
+            "description": "Spam filter based on Machine Learning techniques",
+            "advantage": "Automatically learns which words and phrases predict spam by detecting frequent patterns",
+            "benefits": [
+              "Shorter program",
+              "Easier to maintain",
+              "More accurate"
+            ],
+            "figure_reference": "Figure 1-2: Machine Learning approach"
+          }
+        }
+      },
+      {
+        "page_number": 4,
+        "content": {
+          "adaptability_advantage": {
+            "description": "ML systems automatically adapt to changes",
+            "example": "If spammers change \"4U\" to \"For U\", ML filter notices the new pattern without manual intervention",
+            "figure_reference": "Figure 1-3: Automatically adapting to change"
+          },
+          "complex_problems": {
+            "description": "ML excels at problems too complex for traditional approaches or with no known algorithm",
+            "example": "Speech recognition - traditional pitch detection doesn't scale to thousands of words, millions of people, noisy environments, multiple languages"
+          },
+          "human_learning": {
+            "description": "ML can help humans learn by revealing patterns and correlations",
+            "concept": "Data mining - using ML to dig into large amounts of data to discover not immediately apparent patterns",
+            "figure_reference": "Figure 1-4: Machine Learning can help humans learn"
+          }
+        }
+      },
+      {
+        "page_number": 5,
+        "content": {
+          "summary": "Machine Learning is great for:",
+          "applications": [
+            "Problems requiring lots of hand-tuning or long lists of rules",
+            "Complex problems with no good traditional solution",
+            "Fluctuating environments (adapts to new data)",
+            "Getting insights about complex problems and large amounts of data"
+          ],
+          "section_title": "Types of Machine Learning Systems",
+          "classification_criteria": [
+            "Training with human supervision (supervised, unsupervised, semisupervised, Reinforcement Learning)",
+            "Learning incrementally (online vs batch learning)",
+            "Approach to learning (instance-based vs model-based learning)"
+          ],
+          "note": "These criteria are not exclusive and can be combined"
+        }
+      },
+      {
+        "page_number": 6,
+        "content": {
+          "example": "A spam filter learning on the fly using a deep neural network trained with spam/ham examples is an online, model-based, supervised learning system",
+          "supervision_based_classification": {
+            "categories": [
+              "supervised learning",
+              "unsupervised learning",
+              "semisupervised learning",
+              "Reinforcement Learning"
+            ]
+          },
+          "supervised_learning": {
+            "definition": "Training data includes desired solutions called labels",
+            "example_figure": "Figure 1-5: A labeled training set for supervised learning",
+            "tasks": [
+              {
+                "name": "Classification",
+                "description": "Learn to classify instances into categories",
+                "example": "Spam filter classifying emails as spam or ham"
+              },
+              {
+                "name": "Regression",
+                "description": "Predict a target numeric value",
+                "example": "Predicting car price based on features (mileage, age, brand, etc.)",
+                "figure_reference": "Figure 1-6: Regression",
+                "historical_note": "Term 'regression' comes from Francis Galton's study of height inheritance where children of tall people tended to be shorter (regression to the mean)"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "page_number": 7,
+        "content": {
+          "notes": [
+            "Some regression algorithms can be used for classification and vice versa (e.g., Logistic Regression for classification)",
+            "Some neural network architectures can be unsupervised (autoencoders, restricted Boltzmann machines) or semisupervised (deep belief networks)",
+            "Attribute vs feature: attribute is data type (e.g., 'Mileage'), feature generally means attribute plus value (e.g., 'Mileage = 15,000')"
+          ],
+          "supervised_algorithms": [
+            "k-Nearest Neighbors",
+            "Linear Regression",
+            "Logistic Regression",
+            "Support Vector Machines (SVMs)",
+            "Decision Trees and Random Forests",
+            "Neural networks"
+          ]
+        }
+      },
+      {
+        "page_number": 8,
+        "content": {
+          "unsupervised_learning": {
+            "definition": "Training data is unlabeled - system tries to learn without a teacher",
+            "example_figure": "Figure 1-7: An unlabeled training set for unsupervised learning",
+            "algorithm_categories": [
+              {
+                "name": "Clustering",
+                "algorithms": [
+                  "k-Means",
+                  "Hierarchical Cluster Analysis (HCA)",
+                  "Expectation Maximization"
+                ]
+              },
+              {
+                "name": "Visualization and dimensionality reduction",
+                "algorithms": [
+                  "Principal Component Analysis (PCA)",
+                  "Kernel PCA",
+                  "Locally-Linear Embedding (LLE)",
+                  "t-distributed Stochastic Neighbor Embedding (t-SNE)"
+                ],
+                "note": "Covered in Chapter 8"
+              },
+              {
+                "name": "Association rule learning",
+                "algorithms": [
+                  "Apriori",
+                  "Eclat"
+                ]
+              }
+            ]
+          },
+          "clustering_example": {
+            "scenario": "Using blog visitor data",
+            "application": "Clustering algorithm detects groups of similar visitors without being told which group they belong to",
+            "potential_findings": [
+              "40% males who love comic books reading in evening",
+              "20% young sci-fi lovers visiting on weekends"
+            ],
+            "hierarchical_benefit": "Can subdivide groups into smaller groups for better targeting",
+            "figure_reference": "Figure 1-8: Clustering example"
+          }
+        }
+      }
+    ]
+  }
+}
